@@ -9,7 +9,7 @@ setup(
     install_requires=[
         'setuptools',
     ],
-    py_modules=['starscream_flake8'],
+    py_modules=['starscream_flake'],
     zip_safe=False,
     entry_points={
         'flake8.extension': [
