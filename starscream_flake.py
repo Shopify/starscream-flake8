@@ -54,5 +54,5 @@ def main(logical_line, physical_line, line_number, filename):
         results.append(result)
     return results
 
-main.name = 'main'
+main.name = 'starscream-flake8-plugin'
 main.version = __version__
