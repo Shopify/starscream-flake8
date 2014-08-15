@@ -1,13 +1,12 @@
 import re
 import pep8
-
 __version__ = '0.0.1'
 
 JSON_IMPORT_REGEX = re.compile(r'(import json\b)|(from json\s)', re.IGNORECASE)
 U_LITERAL = re.compile(r'(u[\(\[\'\"])', re.IGNORECASE)
 RANGE_LITERAL = re.compile(r'(\srange\()', re.IGNORECASE)
 CLASS_DEFINITION = re.compile(r'\s*class\b')
-METHOD_DEFINITION = re.compile(r'\s*def\b')
+METHOD_DEFINITION = re.compile(r'\s*(def|@\w+)\b')
 
 def check_no_json_import(logical_line, physical_line, line_number, filename):
     '''
