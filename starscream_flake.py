@@ -35,6 +35,7 @@ def detect_range_instead_of_xrange(logical_line, physical_line, line_number, fil
     if match:
         return match.start(), 'SC03 found range method, use xrange instead as xrange is an iterator.'
 
+
 def detect_missing_blank_line_after_class_definition(logical_line, previous_logical, blank_lines):
     '''
     This function enforces that there is a blank line after a class definition line.
