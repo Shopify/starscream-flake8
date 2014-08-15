@@ -28,11 +28,13 @@ def test_detect_u_literaldetect_u_literal():
 
 def test_detect_no_blank_lines_after_class_definition():
     previous_logical = "class foo(object):"
+    logical_line = "    def bar(self):"
     blank_lines = 0
-    assert detect_missing_blank_line_after_class_definition(previous_logical, blank_lines) == (0, 'SC04 expected 1 blank lines after a class definition, found 0')
+    assert detect_missing_blank_line_after_class_definition(logical_line, previous_logical, blank_lines) == (0, 'E309 expected 1 blank lines between class and method definitions, found 0')
 
 
-def test_detect_2_blank_lines_after_embedded_class_definition():
+def test_detect_no_blank_lines_after_embedded_class_definition():
     previous_logical = "    class foo(object):"
-    blank_lines = 2
-    assert detect_missing_blank_line_after_class_definition(previous_logical, blank_lines) == (0, 'SC04 expected 1 blank lines after a class definition, found 2')
+    logical_line = "        def bar(self):"
+    blank_lines = 0
+    assert detect_missing_blank_line_after_class_definition(logical_line, previous_logical, blank_lines) == (0, 'E309 expected 1 blank lines between class and method definitions, found 0')
