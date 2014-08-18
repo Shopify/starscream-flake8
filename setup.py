@@ -4,10 +4,11 @@ from setuptools import setup
 
 setup(
     name='starscream-flake8',
-    version='0.0.1',
+    version='0.0.2',
 
     install_requires=[
         'setuptools',
+        'pep8'
     ],
     py_modules=['starscream_flake'],
     zip_safe=False,
